@@ -84,6 +84,7 @@ public class WebSecurityConfig {
                                 //.requestMatchers("/api/admin/**").permitAll()
                                 //.requestMatchers("/api/public/**").permitAll()
                                 .requestMatchers("/swagger-ui/**").permitAll()
+                                .requestMatchers("/actuator/**").permitAll()
                                 .requestMatchers("/api/test/**").permitAll()
                                 .requestMatchers("/images/**").permitAll()
                                 .anyRequest().authenticated()
@@ -105,6 +106,7 @@ public class WebSecurityConfig {
                 "/swagger-resources/**",
                 "/configuration/security",
                 "/swagger-ui.html",
+                "/actuator/**",
                 "/webjars/**"));
     }
 

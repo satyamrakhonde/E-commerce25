@@ -47,9 +47,9 @@ public class Address {
     @Size(min = 6, message = "Pincode name must be atleast 6 characters")
     private String pincode;
 
-    @ToString.Exclude
-    @ManyToMany(mappedBy = "addresses")
-    private List<User> user = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Address(Long addressId, String street, String buildingName, String city, String state, String country, String pincode) {
         this.addressId = addressId;
